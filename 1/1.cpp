@@ -67,6 +67,7 @@ void secondPart()
         sum += std::stoi(std::to_string(positions.begin()->second) + std::to_string(positions.rbegin()->second));
     }  
     std::cout << "Second part: " << sum; //54845
+    //test line
 }
 
 int main()
