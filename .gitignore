@@ -24,6 +24,7 @@
 *.sql
 *.sqlite
 tasks.json
+settings.json
 *.txt
 
 # OS generated files #
