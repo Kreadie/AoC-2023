@@ -25,7 +25,7 @@ void firstPart()
 
         sum += std::stoi(std::to_string(digits[0] ) + std::to_string(digits[digits.size() - 1]));
     }
-    std::cout << "First part: " << sum << "\n"; //55090
+    std::cout << "First part: " << sum << "\n";
 }
 
 void secondPart()
@@ -66,7 +66,7 @@ void secondPart()
 
         sum += std::stoi(std::to_string(positions.begin()->second) + std::to_string(positions.rbegin()->second));
     }  
-    std::cout << "Second part: " << sum; //54845
+    std::cout << "Second part: " << sum;
 }
 
 int main()

@@ -3,7 +3,7 @@
 #include <string>
 
 
-void partOne()
+void firstPart()
 {
     std::string line;
     int sum = 0;
@@ -64,11 +64,58 @@ void partOne()
             sum += counter;        
     }
 
-    std::cout << sum;
+    std::cout << "First part: " << sum << "\n";
+}
+
+void secondPart()
+{
+    std::string line;
+    int sum = 0;
+    size_t counter = 0;
+    
+    std::ifstream File("Input data.txt");
+
+    while(std::getline(File, line))
+    {
+        int rMax = 0;
+        int bMax = 0;
+        int gMax = 0;
+
+        for(size_t i = 7; i < line.size(); i++)
+        {
+            char firstDigit = line[i - 3];
+            char secondDigit = line[i - 2];
+
+            if(line[i] == 'r')
+            {
+                int currentR = std::stoi(std::string() + firstDigit + secondDigit);
+                if(currentR > rMax)
+                    rMax = currentR;
+                    i++;
+            }
+            if(line[i] == 'g')
+            {
+                int currentG= std::stoi(std::string() + firstDigit + secondDigit);
+                if(currentG > gMax)
+                    gMax = currentG;
+                i++;
+            }
+            if(line[i] == 'b')
+            {
+                int currentB = std::stoi(std::string() + firstDigit + secondDigit);
+                if(currentB > bMax)
+                    bMax = currentB;
+                i++;
+            }
+        }
+
+        sum += rMax * gMax * bMax;
+    }
+    std::cout << "Second part: " << sum << "\n";
 }
 
 int main()
 {
-    partOne();
-    
+    firstPart();
+    secondPart();
 }
